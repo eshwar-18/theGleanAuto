@@ -1,0 +1,149 @@
+@use "global" as *;
+
+.hero-pages {
+  width: 100%;
+  height: 41rem;
+  background-image: url("/src/images/hero/heroes-bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+
+  &__overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.92);
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 41rem;
+    position: relative;
+    color: $text-black;
+    text-align: center;
+
+    h3 {
+      font-size: 3.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: $p-size;
+      font-weight: 600;
+      margin-top: 0;
+    }
+  }
+}
+
+.about-main {
+  margin: 5rem auto;
+  display: flex;
+  gap: 4rem;
+  max-width: 120rem;
+  padding: 2rem;
+
+  @media (max-width: 960px) {
+    flex-direction: column;
+  }
+
+  &__img {
+    flex: 1;
+    height: 50rem;
+    background: #e1efff;
+    border-radius: 1rem;
+    overflow: hidden;
+    min-height: 30rem;
+  }
+
+  &__text {
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 3rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem rgba(0,0,0,0.1);
+
+    h2 {
+      font-size: $h2-size;
+      color: $text-black;
+      margin-bottom: 2rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      label {
+        font-weight: bold;
+        color: $text-black;
+        font-size: 1.6rem;
+      }
+
+      input[type="text"] {
+        padding: 1rem;
+        border: 1px solid $border-gray;
+        border-radius: 0.5rem;
+        width: 100%;
+      }
+
+      button {
+        padding: 1rem 2rem;
+        background-color: $primary-color;
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: darken($primary-color, 10%);
+        }
+      }
+    }
+
+    ul#destinations li {
+        background: $bg-white;
+        padding: 1rem;
+        border: 1px solid $border-gray;
+        border-radius: 0.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      
+        &.active {
+          background: lighten($primary-color, 45%);
+        }
+      }
+
+    #output {
+      margin-top: 2rem;
+
+      #toggleSteps {
+        background-color: $primary-color;
+        color: #ffffff;
+        padding: 1rem;
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        margin-bottom: 1rem;
+      }
+
+      #steps {
+        background: $bg-white;
+        border: 1px solid $border-gray;
+        border-radius: 1rem;
+        padding: 2rem;
+        max-height: 30rem;
+        overflow-y: auto;
+      }
+    }
+  }
+}
