@@ -35,14 +35,6 @@ function loadGoogleMapsApi() {
   document.head.appendChild(script);
 }
 
-function initMap() {
-  console.log('Google Maps API loaded!');
-}
-
-loadGoogleMapsApi();
-
-
-
 function showSlides(n) {
   const slides = document.getElementsByClassName("slide");
 
@@ -101,7 +93,7 @@ function createDestinationItem(name, coords) {
 }
 
 async function geocodeAddress(address) {
-  const response = await fetch(`https://api.opencagedata.com/geocode/v1/json?q=${encodeURIComponent(address)}&key='8d515bf9fd3f4663a42aabb9a10c4341'`);
+  const response = await fetch(`https://api.opencagedata.com/geocode/v1/json?q=${encodeURIComponent(address)}&key=8d515bf9fd3f4663a42aabb9a10c4341`);
   const data = await response.json();
   if (data.results.length > 0) {
     return {
@@ -308,6 +300,7 @@ function initMap() {
   directionsRenderer.setMap(map);
 }
 
+loadGoogleMapsApi();
 // ================================
 // 3. Event Listeners
 // ================================
@@ -330,5 +323,4 @@ document.addEventListener('DOMContentLoaded', () => {
     animation: 150
   });
 
-  initMap();
 });
