@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Route Planner</title>
-  <link rel="stylesheet" href="styles.css">
-
-  <script src="config.js"></script> 
-  <script src="script.js"></script>
-  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trip Rec</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
 </head>
 <body>
   <div class="hero-pages">
     <div class="hero-pages__overlay"></div>
-    <div class = "container">
+    <div class="container">
       <div class="hero-pages__text">
         <h3>Trip Rec</h3>
         <p>Home / Trip Rec</p>
@@ -21,66 +18,42 @@
     </div>
   </div>
 
-  <div id="slideshow" class="slideshow-container">
-    <div class="slide fade">
-      <img src="images2/niagarafalls.jpg" alt="Niagara Falls">
-      <div class="caption"> A breathtaking natural wonder, Niagara Falls is known for its massive, thunderous waterfalls and stunning views. It’s a must-see destination for nature lovers and adventure seekers alike.</div>
-    </div>
+  <div class="container">
+    <main class="about-main">
+      <div class="newtest">
+        <!-- Table of Locations -->
+        <div class="about-main__text">
+          <h2>Explore Locations</h2>
+          <table id="locationTable">
+            <tbody>
+              <tr><td><button onclick="showImage(0)">Niagara Falls</button></td></tr>
+              <tr><td><button onclick="showImage(1)">Eaton Centre</button></td></tr>
+              <tr><td><button onclick="showImage(2)">Blue Mountain</button></td></tr>
+              <tr><td><button onclick="showImage(3)">CN Tower</button></td></tr>
+              <tr><td><button onclick="showImage(4)">Royal Ontario Museum</button></td></tr>
+              <tr><td><button onclick="showImage(5)">Ripley's Aquarium</button></td></tr>
+              <tr><td><button onclick="showImage(6)">Woodbine Beach</button></td></tr>
+              <tr><td><button onclick="showImage(7)">Art Gallery of Ontario</button></td></tr>
+              <tr><td><button onclick="showImage(8)">Toronto Zoo</button></td></tr>
+              <tr><td><button onclick="showImage(9)">Canada's Wonderland</button></td></tr>
+              <tr><td><button onclick="showImage(10)">Rouge National Park</button></td></tr>
+            </tbody>
+          </table>
+        </div>
   
-    <div class="slide fade">
-      <img src="images2/eatoncentre.jpg" alt="Eaton Centre">
-      <div class="caption">Located in downtown Toronto, the CF Toronto Eaton Centre is a vibrant shopping mall featuring hundreds of stores, restaurants, and architectural highlights like its famous glass ceiling.</div>
-    </div>
-  
-    <div class="slide fade">
-      <img src="images2/bluemountain.jpg" alt="Blue Mountain">
-      <div class="caption">Ontario’s premier four-season resort, Blue Mountain offers skiing, snowboarding, mountain biking, hiking, and a charming pedestrian village with shops and cafes.</div>
-    </div>
-  
-    <div class="slide fade">
-      <img src="images2/cntower.jpg" alt="CN Tower">
-      <div class="caption">One of Canada’s most iconic landmarks, the CN Tower soars above Toronto’s skyline and offers sweeping views, a glass floor, and the thrilling EdgeWalk experience.</div>
-    </div>
-  
-    <div class="slide fade">
-      <img src="images2/rom.jpg" alt="Royal Ontario Museum">
-      <div class="caption">Canada’s largest museum of art, culture, and nature, the ROM features world-renowned exhibits from ancient artifacts to dinosaur skeletons.</div>
-    </div>
-  
-    <div class="slide fade">
-      <img src="images2/ripleys.jpg" alt="Ripley's Aquarium">
-      <div class="caption">This underwater attraction, located near the CN Tower, showcases thousands of marine animals, from colorful tropical fish to giant sharks, with its famous glass tunnel walk.</div>
-    </div>
-  
-    <div class="slide fade">
-      <img src="images2/woodbine.jpg" alt="Woodbine Beach">
-      <div class="caption">A popular summer destination in Toronto, Woodbine Beach offers sandy shores, volleyball courts, picnic areas, and a lively boardwalk by Lake Ontario.</div>
-    </div>
-  
-    <div class="slide fade">
-      <img src="images2/ago.jpg" alt="Art Gallery of Ontario">
-      <div class="caption">Home to over 90,000 works of art, the AGO is one of the largest art museums in North America, featuring Canadian, Indigenous, and international pieces.</div>
-    </div>
-  
-    <div class="slide fade">
-      <img src="images2/torontozoo.jpg" alt="Toronto Zoo">
-      <div class="caption">One of the largest zoos in the world, the Toronto Zoo houses over 5,000 animals across diverse regions like the African Savanna and Tundra Trek.</div>
-    </div>
-  
-    <div class="slide fade">
-      <img src="images2/wonderland.jpg" alt="Canada's Wonderland">
-      <div class="caption">Canada’s largest amusement park, located just north of Toronto, offers thrilling roller coasters, water rides, live shows, and a giant waterpark.</div>
-    </div>
-  
-    <div class="slide fade">
-      <img src="images2/park.jpg" alt="Rouge National Park">
-      <div class="caption">A sprawling protected area inside Toronto, Rouge Park offers hiking trails, wetlands, forests, and historic sites, making it a rare natural oasis within a busy city.</div>
-    </div>
-  
-    <a class="prev">&#10094;</a>
-    <a class="next">&#10095;</a>
+        <!-- Image Display -->
+        <div class="about-main__img">
+          <div style="height: 100%; border-radius: 1rem; box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1); overflow: hidden;">
+            <img id="locationImage" src="images2/niagarafalls.jpg" alt="Location Image"
+                 style="width: 100%; height: 80%; object-fit: cover; border-radius: 1rem 1rem 0 0;">
+            <div id="locationCaption" style="padding: 1rem; background-color: #f2f2f2; font-size: 1.6rem; color: #333;">
+              A breathtaking natural wonder, Niagara Falls is known for its massive, thunderous waterfalls and stunning views.
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
   </div>
-  
 
   <div class="container">
     <main class="about-main">
@@ -90,41 +63,71 @@
         <div id="sidebar" class="about-main__text">
           <h2>Route Planner</h2>
           <form id="locationForm">
-            <label>Address:
-            </label>
-            <input type="text" id="address" placeholder="eg. 123 Main St" required>
-            <label>Postal Code:
-            </label>
-            <input type="text" id="postal" placeholder="eg. A1A 1A1" required>
+            <label>Address:</label>
+            <input type="text" id="address" placeholder="eg. 123 Main St" required />
+
+            <label>Postal Code:</label>
+            <input type="text" id="postal" placeholder="eg. A1A 1A1" required />
 
             <label>Select destinations:</label>
-            
             <ul id="destinations" class="sortable"></ul>
 
             <label>Add custom destination:</label>
-            <input type="text" id="customName" placeholder="Name">
-            <input type="text" id="customAddress" placeholder="Address">
+            <input type="text" id="customName" placeholder="Name" />
+            <input type="text" id="customAddress" placeholder="Address" />
             <button type="button" id="addCustom">Add</button>
 
             <button type="submit">Calculate Route</button>
             <button type="button" id="printBtn">Print Directions</button>
-            <label class="switch">
-              <input type="checkbox" id="toggleOptimization">
-              <span class="slider"></span>
-            </label>
-            <span id="toggleModeLabel">Mode: Fastest Route</span>
           </form>
 
-          <div id="output">
-            <div id="steps" style="display:none;"></div>
-          </div>
+          <div id="output"></div>
         </div>
       </div>
     </main>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
   <script src="config.js"></script>
   <script src="thegleanautotriprec.js"></script>
+  <script>
+    let slideIndex = 0;
+    const slides = document.getElementsByClassName("slide");
+    const showSlides = (n) => {
+      if (n >= slides.length) slideIndex = 0;
+      if (n < 0) slideIndex = slides.length - 1;
+      Array.from(slides).forEach(slide => slide.classList.remove("active"));
+      slides[slideIndex].classList.add("active");
+    };
+    const nextSlide = () => showSlides(++slideIndex);
+    const prevSlide = () => showSlides(--slideIndex);
+    document.querySelector(".next").addEventListener("click", nextSlide);
+    document.querySelector(".prev").addEventListener("click", prevSlide);
+    setInterval(nextSlide, 5000);
+  </script>
+
+<script>
+  const images = [
+    {src: "images2/niagarafalls.jpg", caption: "A breathtaking natural wonder, Niagara Falls is known for its massive, thunderous waterfalls and stunning views."},
+    {src: "images2/eatoncentre.jpg", caption: "Located in downtown Toronto, the Eaton Centre is a vibrant shopping mall with hundreds of stores and restaurants."},
+    {src: "images2/bluemountain.jpg", caption: "Blue Mountain is a four-season resort with skiing, snowboarding, biking, and a pedestrian village."},
+    {src: "images2/cntower.jpg", caption: "The CN Tower is a Toronto icon with sweeping views, glass floors, and the EdgeWalk experience."},
+    {src: "images2/rom.jpg", caption: "The Royal Ontario Museum hosts ancient artifacts, dinosaur skeletons, and cultural exhibits."},
+    {src: "images2/ripleys.jpg", caption: "Ripley's Aquarium showcases thousands of marine animals and a famous glass tunnel walk."},
+    {src: "images2/woodbine.jpg", caption: "Woodbine Beach offers sandy shores, volleyball courts, and a lively summer atmosphere."},
+    {src: "images2/ago.jpg", caption: "The Art Gallery of Ontario features Canadian, Indigenous, and international artwork."},
+    {src: "images2/torontozoo.jpg", caption: "The Toronto Zoo has over 5,000 animals and themed regions like the African Savanna."},
+    {src: "images2/wonderland.jpg", caption: "Canada’s Wonderland is a theme park full of thrill rides, live shows, and a waterpark."},
+    {src: "images2/park.jpg", caption: "Rouge National Park offers hiking, wetlands, forests, and a rare natural escape in the city."}
+  ];
+
+  function showImage(index) {
+    document.getElementById('locationImage').src = images[index].src;
+    document.getElementById('locationCaption').innerText = images[index].caption;
+  }
+</script>
+
+
 </body>
 </html>

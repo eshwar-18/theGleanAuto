@@ -59,6 +59,121 @@ body {
   background-color: #1b8168;
 }
 
+#locationTable {
+  width: 100%;
+  font-size: 1.6rem;
+  border-collapse: collapse;
+}
+
+#locationTable td {
+  padding: 0.8rem;
+}
+
+#locationTable button {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1.4rem;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#locationTable button:hover {
+  background-color: #d1e1ee;
+}
+
+
+.route-label {
+  background-color: #3B719F;
+  color: white;
+  font-weight: bold;
+  font-size: 1.4rem;
+  padding: 2px 6px;
+  border-radius: 50%;
+  margin-left: auto;
+  margin-right: 0;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  line-height: 20px;
+  margin-left: 10px;
+}
+
+
+.marker-with-label {
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.marker-label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #2d2d2d;
+  margin-bottom: 2px;
+  background: white;
+  padding: 2px 5px;
+  border-radius: 4px;
+  box-shadow: 0 0 2px rgba(0,0,0,0.2);
+}
+
+.marker-dot {
+  width: 10px;
+  height: 10px;
+  background-color: #3B719F;
+  border-radius: 50%;
+  margin: 0 auto;
+  border: 2px solid white;
+  box-shadow: 0 0 3px rgba(0,0,0,0.3);
+}
+
+
+.map-pin .pin {
+  width: 30px;
+  height: 42px;
+  background-color: #3B719F;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  text-align: center;
+  line-height: 30px;
+  position: relative;
+  top: 6px;
+  left: 0px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.map-pin .pin::after {
+  content: '';
+  width: 12px;
+  height: 12px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
+
+
+.custom-label {
+  font-size: 14px;
+  color: #000;
+  background: white;
+  border: 2px solid #333;
+  border-radius: 6px;
+  padding: 4px 8px;
+  min-width: 20px;
+  text-align: center;
+  display: inline-block;
+  line-height: 1;
+}
+
+
+
 .slide {
   opacity: 0;
   transition: opacity 1s ease;
@@ -68,13 +183,13 @@ body {
   width: 100%;
   height: 100%;
   z-index: 1;
-  pointer-events: none; /* Don't allow clicks */
+  pointer-events: none;
 }
 
 .slide.active {
   opacity: 1;
   z-index: 2;
-  pointer-events: auto; /* Allow clicks if needed */
+  pointer-events: auto;
 }
 
 
@@ -200,21 +315,27 @@ body {
 }
 
 .about-main__img {
+  padding-top: 10rem;
+  padding-left: 2rem;
   flex: 1;
-  height: 50rem;
-  background: #e1efff;
   border-radius: 1rem;
   overflow: hidden;
-  min-height: 30rem;
+  width: 60rem;
+  min-height: 750px;
+  max-height: 750px;
+  font-size: 6rem;
 }
 .about-main__text {
   flex: 1;
   background-color: rgba(255, 255, 255, 0.95);
-  padding: 3rem;
+  padding-top: 8rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   border-radius: 1rem;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
 }
 .about-main__text h2 {
+  text-align: center;
   font-size: 4.2rem;
   color: #010103;
   margin-bottom: 2rem;
@@ -280,7 +401,7 @@ body {
 .slider {
   position: absolute;
   cursor: pointer;
-  background-color: #bebebe; /* light grey for Fastest */
+  background-color: #bebebe;
   border-radius: 34px;
   top: 0;
   left: 0;
@@ -296,13 +417,13 @@ body {
   width: 26px;
   left: 4px;
   bottom: 4px;
-  background-color: #fff; /* knob color */
+  background-color: #fff;
   transition: .4s;
   border-radius: 50%;
 }
 
 input:checked + .slider {
-  background-color: #3B719F; /* light blue when User Order */
+  background-color: #3B719F;
 }
 
 input:checked + .slider:before {
@@ -333,4 +454,4 @@ input:checked + .slider:before {
   padding: 2rem;
   max-height: 30rem;
   overflow-y: auto;
-}/*# sourceMappingURL=styles.css.map */
+}
